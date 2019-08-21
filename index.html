@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slap Game</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+</head>
+
+<body class="bg-dark text-light">
+  <div class="container">
+    <div class="row p-5">
+      <div class="col-5 text-center">
+        <div id="toast-picture">
+          <img src="toaster.png" alt="" width="200px" height="175px">
+        </div>
+        <h1>Toast</h1>
+        <h1>Health: <span id="toast-health">--</span></h1>
+        <div class="progress bg-danger mb-2 rounded-pill">
+          <div id="toast-health-bar" class="progress-bar health-bar bg-success"></div>
+        </div>
+        <div class="bg-secondary p-2 rounded">
+
+          <button class="btn rounded-pill mb-2 btn-danger" onclick="fight.breadController.slap()"><i
+              class="fas fa-hand-paper"></i> Slap</button>
+          <button class="btn rounded-pill mb-2 btn-danger" onclick="fight.breadController.shinKick()"><i
+              class="fas fa-shoe-prints"></i> Shin-Kick</button>
+          <button class="btn rounded-pill mb-2 btn-danger" onclick="fight.breadController.burn()"><i
+              class="fas fa-fire text-warning"></i> Burn</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.toastController.giveItem('hPotion')">Use a
+            <i class="fas fa-flask"></i> health
+            potion</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.breadController.giveItem('bPotion')">Throw an
+            <i class="fas fa-flask text-danger"></i> item-breaking
+            potion</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.breadController.giveItem('sword')">Equip a
+            <i class="fas fa-crosshairs"></i> sword</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.breadController.giveItem('bow')">Equip a
+            <i class="fas fa-crosshairs"></i> bow</button>
+          <button class="btn rounded-pill btn-success" onclick="fight.toastController.giveItem('shield')">Equip a
+            <i class="fas fa-shield-alt"></i> shield</button>
+          <button class="btn rounded-pill btn-success" onclick="fight.toastController.giveItem('armor')">Equip some
+            <i class="fas fa-shield-alt"></i> armor</button>
+        </div>
+        <dl id="toast-inventory" class="mt-2 bg-light text-dark rounded">
+          <dt>Inventory:</dt>
+          <div id="toast-attack-items"></div>
+          <div id="toast-defense-items"></div>
+        </dl>
+      </div>
+      <div class="col-5 offset-2 text-center">
+        <div id="bread-picture">
+          <img src="bread.gif" alt="" width="200px" height="175px">
+        </div>
+        <h1>Bread</h1>
+        <h1>Health: <span id="bread-health">--</span></h1>
+        <div class="progress bg-danger mb-2 rounded-pill">
+          <div id="bread-health-bar" class="progress-bar health-bar bg-success"></div>
+        </div>
+        <div class="bg-secondary p-2 rounded">
+          <button class="btn rounded-pill mb-2 btn-danger" onclick="fight.toastController.slap()"><i
+              class="fas fa-hand-paper"></i> Slap</button>
+          <button class="btn rounded-pill mb-2 btn-danger" onclick="fight.toastController.shinKick()"><i
+              class="fas fa-shoe-prints"></i> Shin-Kick</button>
+          <button class="btn rounded-pill mb-2 btn-danger" onclick="fight.toastController.swooce()">
+            <i class="fas fa-bomb text-dark"></i> Bomb</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.breadController.giveItem('hPotion')">Use a
+            <i class="fas fa-flask"></i> health
+            potion</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.toastController.giveItem('bPotion')">Throw an
+            <i class="fas fa-flask text-danger"></i>
+            item-breaking
+            potion</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.toastController.giveItem('sword')">Equip a
+            <i class="fas fa-crosshairs"></i> sword</button>
+          <button class="btn rounded-pill mb-2 btn-success" onclick="fight.toastController.giveItem('bow')">Equip a
+            <i class="fas fa-crosshairs"></i> bow</button>
+          <button class="btn rounded-pill btn-success" onclick="fight.breadController.giveItem('shield')">Equip a
+            <i class="fas fa-shield-alt"></i> shield</button>
+          <button class="btn rounded-pill btn-success" onclick="fight.breadController.giveItem('armor')">Equip some
+            <i class="fas fa-shield-alt"></i> armor</button>
+        </div>
+        <dl id="bread-inventory" class="mt-2 bg-light text-dark rounded">
+          <dt>Inventory:</dt>
+          <div id="bread-attack-items"></div>
+          <div id="bread-defense-items"></div>
+        </dl>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2 offset-5 text-center">
+        <button class="btn rounded-pill btn-primary w-100" onclick="fight.reset()">Reset</button>
+      </div>
+    </div>
+  </div>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
