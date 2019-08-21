@@ -44,16 +44,16 @@ export default class BreadController {
     }
     if (_breadService.Bread.nItems.length <= 3) {
       if (item == "sword") {
-        document.querySelector("#toast-attack-items").innerHTML += "<dd>Sword</dd>";
+        document.querySelector("#toast-attack-items").innerHTML += "<dd>Sword, x1.5 Damage</dd>";
       } else if (item == "bow") {
-        document.querySelector("#toast-attack-items").innerHTML += "<dd>Bow</dd>";
+        document.querySelector("#toast-attack-items").innerHTML += "<dd>Bow, x2 Damage</dd>";
       }
     }
     if (_breadService.Bread.pItems.length <= 3) {
       if (item == "shield") {
-        document.querySelector("#bread-defense-items").innerHTML += "<dd>Shield</dd>";
+        document.querySelector("#bread-defense-items").innerHTML += "<dd>Shield, x1.5 Defense</dd>";
       } else if (item == "armor") {
-        document.querySelector("#bread-defense-items").innerHTML += "<dd>Armor</dd>";
+        document.querySelector("#bread-defense-items").innerHTML += "<dd>Armor, x2 Defense</dd>";
       }
     }
     _draw()
